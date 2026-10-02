@@ -58,6 +58,7 @@ def save():
         finally:
             website_entry.delete(0, END)
             password_entry.delete(0, END)
+            messagebox.showinfo("Password Saved", "Successfully saved your data!")
 
 
 # ---------------------------- FIND PASSWORD ------------------------------- #
@@ -71,7 +72,6 @@ def find_password():
             data = json.load(data_file)
     except FileNotFoundError:
         messagebox.showinfo("Error", "No data file found.")
-
     except json.JSONDecodeError:
         messagebox.showinfo("Error", "The data file is empty or invalid.")
     else:
